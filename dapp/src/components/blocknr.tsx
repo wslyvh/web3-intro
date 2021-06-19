@@ -7,20 +7,22 @@ export function BlockNr() {
   const [blockNr, setBlockNr] = React.useState<number>()
 
   useEffect(() => { 
-    async function getBlockNr() { 
-      const nr = await provider.getBlockNumber()
-
-      setBlockNr(nr)
-    }
-
     getBlockNr()
   })
+
+  async function getBlockNr() { 
+    const nr = await provider.getBlockNumber()
+    setBlockNr(nr)
+  }
   
   if (!blockNr) return <></>
 
   return (
     <div>
-        <p>Current Block # {blockNr}</p>
+      <p>
+        Current Block # {blockNr} {' '} 
+        <button onClick={getBlockNr}>Refresh</button>
+      </p>
     </div>
   )
 }

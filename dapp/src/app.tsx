@@ -1,5 +1,6 @@
 import { Balance } from './components/balance';
 import { BlockNr } from './components/blocknr';
+import { TokenView } from './components/token';
 
 export function App() {
   return (
@@ -18,6 +19,10 @@ export function App() {
       <div>
         <Balance />
       </div>
+
+      {/* <div>
+        <TokenView />
+      </div> */}
     </div>
   );
 }
